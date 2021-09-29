@@ -1,2 +1,2 @@
 # minesweeper
-[minesweeper](play.minesweeper.hns.to) - Minesweeper game deployed on Akash behind an HNS TLD
+[minesweeper](http://play.minesweeper.hns.to) - Minesweeper game deployed on Akash behind an HNS TLD
