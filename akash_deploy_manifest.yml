@@ -1,0 +1,41 @@
+---
+version: "2.0"
+
+services:
+  minesweeper:
+    image: creepto/minesweeper
+    expose:
+      - port: 3000
+        as: 80
+        accept:
+          - minesweeper
+          - www.minesweeper
+          - play.minesweeper
+          - hns.to
+        to:
+          - global: true
+profiles:
+  compute:
+    minesweeper:
+      resources:
+        cpu:
+          units: 0.5
+        memory:
+          size: 512Mi
+        storage:
+          size: 512Mi
+  placement:
+    westcoast:
+      signedBy:
+        anyOf:
+          - "FILLED AUTOMATICALLY BY AKASH DEPLOY TOOL"
+      pricing:
+        minesweeper: 
+          denom: uakt
+          amount: 1000
+
+deployment:
+  minesweeper:
+    westcoast:
+      profile: minesweeper
+      count: 1
